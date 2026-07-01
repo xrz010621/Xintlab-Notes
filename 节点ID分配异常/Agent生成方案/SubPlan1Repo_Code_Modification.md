@@ -5,6 +5,7 @@
 > 子方案: [SubPlan_SLAVE_DIAG.md](SubPlan1_Slave_Diag.md)
 > 范围: 仅从机 APM32F103CB 侧，不改主控 ESP32
 > 版本: v1
+> 生成：Claude code （正确性不完全确保，理智参考）
 > 日期: 2026-06-26
 
 ---

@@ -4,6 +4,7 @@
 > 前置子方案：[SubPlan1_Slave_Diag.md](SubPlan1_Slave_Diag.md)（Phase 0 诊断日志打桩，已完成代码）
 > 范围：仅从机 APM32F103CB 侧 + 主控 ESP32 侧日志观察（不改 ESP32 固件）
 > 版本：v1
+> 生成：Claude code （正确性不完全确保，理智参考）
 > 日期：2026-06-29
 
 ---
