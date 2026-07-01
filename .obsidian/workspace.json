@@ -8,20 +8,6 @@
         "type": "tabs",
         "children": [
           {
-            "id": "a3a6ce10f9f921d7",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "节点ID分配异常/技术文档 - 多 APM32 节点 ID 分配机制分析.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "技术文档 - 多 APM32 节点 ID 分配机制分析"
-            }
-          },
-          {
             "id": "88a7d3cf84c7c493",
             "type": "leaf",
             "state": {
@@ -41,26 +27,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "节点ID分配异常/单从机id分配异常测试过程和结果.md",
+                "file": "节点ID分配异常/单从机id分配异常测试过程和结果记录.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "单从机id分配异常测试过程和结果"
-            }
-          },
-          {
-            "id": "f7246591912d1e67",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "节点ID分配异常/单从机id分配异常测试过程和结果.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "单从机id分配异常测试过程和结果"
+              "title": "单从机id分配异常测试过程和结果记录"
             }
           },
           {
@@ -76,9 +48,23 @@
               "icon": "lucide-file",
               "title": "单从机测试异常分析报告"
             }
+          },
+          {
+            "id": "bc8a6f50e59439fd",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "节点ID分配异常/单从机id分配异常测试过程和结果记录.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "单从机id分配异常测试过程和结果记录"
+            }
           }
         ],
-        "currentTab": 2
+        "currentTab": 3
       }
     ],
     "direction": "vertical"
@@ -151,7 +137,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "节点ID分配异常/单从机id分配异常测试过程和结果.md",
+                "file": "节点ID分配异常/单从机id分配异常测试过程和结果记录.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -161,7 +147,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "单从机id分配异常测试过程和结果 的反向链接列表"
+              "title": "单从机id分配异常测试过程和结果记录 的反向链接列表"
             }
           },
           {
@@ -251,12 +237,13 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "460880f9145447a9",
+  "active": "bc8a6f50e59439fd",
   "lastOpenFiles": [
+    "工作小问题记录.md",
+    "节点ID分配异常/单从机id分配异常测试过程和结果记录.md",
+    "节点ID分配异常/双从机测试过程记录.md",
     "节点ID分配异常/单从机测试异常分析报告.md",
-    "节点ID分配异常/双从机测试记录.md",
     "节点ID分配异常/技术文档 - 多 APM32 节点 ID 分配机制分析.md",
-    "节点ID分配异常/单从机id分配异常测试过程和结果.md",
     "节点ID分配异常/Issue.md",
     "节点ID分配异常/Agent生成方案/SubPlan1_Slave_Diag.md",
     "节点ID分配异常/Agent生成方案/SubPlan1Repo_Code_Modification.md",
@@ -265,7 +252,6 @@
     "节点ID分配异常/Agent生成方案",
     "节点ID分配异常/Agent生成",
     "节点ID分配异常/SubPlan2_Diag_Enhance.md",
-    "未命名.md",
     "WeekReport/week1.md",
     "节点ID分配异常/SubPlan1Repo_Code_Modification.md",
     "节点ID分配异常/SubPlan1_Slave_Diag.md",
