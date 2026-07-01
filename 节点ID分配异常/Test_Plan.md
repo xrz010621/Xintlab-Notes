@@ -1,4 +1,4 @@
-# 节点 ID 分配异常 — 测试方案
+# 节点 ID 分配异常 — 测试初步方案
 
 > Issue: 偶发枚举(POLL/OFFER)帧未被电机单元正确捕获 → 节点 ID 分配异常 #32
 > 方案版本: v2
@@ -50,21 +50,21 @@
 
 诊断代码已落地，采用"增添而非修改"策略——不触碰 `main.c` 已有的 `DebugUartSend*` 基础设施，在新建文件中自含独立的 UART 发送原语。
 
-| 文件 | 状态 | 职责 |
-|------|------|------|
-| [enum_diag.h](motor_control_apm32/app/Include/enum_diag.h) | 已创建 | 声明诊断函数，`#ifdef ENUM_DIAG` 包裹 |
-| [enum_diag.c](motor_control_apm32/app/Source/enum_diag.c) | 已创建 | UART 发送原语 + 4 个诊断日志函数 + 1 个 CAN 错误函数 |
-| [can_service.c](motor_control_apm32/app/Source/can_service.c) | **待修改** | 在 4 个枚举帧处理点插入诊断函数调用 |
-| `CMakeLists.txt` | **待修改** | 新增 `option(ENUM_DIAG ...)` |
+| 文件                                                            | 状态  | 职责                                   |
+| ------------------------------------------------------------- | --- | ------------------------------------ |
+| [enum_diag.h](motor_control_apm32/app/Include/enum_diag.h)    | 已创建 | 声明诊断函数，`#ifdef ENUM_DIAG` 包裹         |
+| [enum_diag.c](motor_control_apm32/app/Source/enum_diag.c)     | 已创建 | UART 发送原语 + 4 个诊断日志函数 + 1 个 CAN 错误函数 |
+| [can_service.c](motor_control_apm32/app/Source/can_service.c) | 已修改 | 在 4 个枚举帧处理点插入诊断函数调用                  |
+
 
 ### 3.2 四个诊断打印点
 
-| 打印点 | 函数 | 输出示例 | 诊断目的 |
-|--------|------|---------|---------|
-| ① RX POLL | `EnumDiagLogPoll(myId)` | `[UID=...] RX POLL, myId=N, will ACK` | 确认每 cycle 收到点名 |
-| ② RX OFFER | `EnumDiagLogOffer(...)` | `[UID=...] RX OFFER id=N, myId=0, accept, ack pending` | **最重要**——确认 UNSET 从机收到了 ID |
-| ③ RX ASSIGN | `EnumDiagLogAssign(...)` | `[UID=...] RX ASSIGN id=N, target=XXXX, match, accept` | 确认重定位帧被正确接收 |
-| ④ TX ACK | `EnumDiagLogAckSent(id)` | `[UID=...] TX ACK id=N` | 确认 ACK 实际发出 |
+| 打印点         | 函数                       | 输出示例                                                   | 诊断目的                       |
+| ----------- | ------------------------ | ------------------------------------------------------ | -------------------------- |
+| ① RX POLL   | `EnumDiagLogPoll(myId)`  | `[UID=...] RX POLL, myId=N, will ACK`                  | 确认每 cycle 收到点名             |
+| ② RX OFFER  | `EnumDiagLogOffer(...)`  | `[UID=...] RX OFFER id=N, myId=0, accept, ack pending` | **最重要**——确认 UNSET 从机收到了 ID |
+| ③ RX ASSIGN | `EnumDiagLogAssign(...)` | `[UID=...] RX ASSIGN id=N, target=XXXX, match, accept` | 确认重定位帧被正确接收                |
+| ④ TX ACK    | `EnumDiagLogAckSent(id)` | `[UID=...] TX ACK id=N`                                | 确认 ACK 实际发出                |
 
 CAN 错误日志（`EnumDiagLogCanError`）函数已实现但在 `#ifdef ENUM_DIAG` 内，本轮暂不在 `CanServiceCheckBusHealth` 中调用，先聚焦帧收发匹配关系。
 
@@ -87,12 +87,12 @@ cmake --build motor_control_apm32/app/build-diag
 
 ### 4.1 单节点测试
 
-| 步骤 | 操作 | 预期结果（从机串口终端观察） | 失败时排查 |
-|------|------|---------|-----------|
-| 1 | 只接 1 块从机 + 主控 | — | — |
-| 2 | 开排插上电 | 从机打印 `Node init done id=0`，随后出现 `RX POLL` → `RX OFFER id=1, accept, ack pending` → `TX ACK id=1` | 检查 CAN 接线/终端 |
-| 3 | 连续观察 5 个 cycle（约 3 秒） | 每个 cycle 都有 `RX POLL, myId=1, will ACK` + `TX ACK id=1`，无中断 | — |
-| 4 | 关排插断电 | — | — |
+| 步骤  | 操作                    | 预期结果（从机串口终端观察）                                                                                   | 失败时排查        |
+| --- | --------------------- | ------------------------------------------------------------------------------------------------ | ------------ |
+| 1   | 只接 1 块从机 + 主控         | —                                                                                                | —            |
+| 2   | 开排插上电                 | 从机打印 `Node init done id=0`，随后出现 `RX POLL` → `RX OFFER id=1, accept, ack pending` → `TX ACK id=1` | 检查 CAN 接线/终端 |
+| 3   | 连续观察 5 个 cycle（约 3 秒） | 每个 cycle 都有 `RX POLL, myId=1, will ACK` + `TX ACK id=1`，无中断                                      | —            |
+| 4   | 关排插断电                 | —                                                                                                | —            |
 
 ### 4.2 3 节点联动测试
 

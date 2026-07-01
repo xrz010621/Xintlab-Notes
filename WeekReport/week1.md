@@ -11,22 +11,23 @@
 	#define BOARD_IPROPI_ADC_CHANNEL ADC_CHANNEL_3	
 ```
 
-**针对issue#32** **偶发枚举(POLL/OFFER)帧未被电机单元正确捕获，节点 ID 分配异常**[[ISSUE]]开展工作。
+针对**issue#32** **偶发枚举(POLL/OFFER)帧未被电机单元正确捕获，节点 ID 分配异常**（[[Issue|详见文档]]）开展工作。
 第一步想法是在从机侧打印CAN帧接收情况，通过查看CAN接收日志判断是否出现帧丢失等问题。
 但在仅连接一台从机进行测试时，发现了以下问题：
-1. 第一步是在从机端`can handle`后通过UART输出日志 （未烧写`TEST_BUILD`)：
+
+1. 在从机端`can handle`后通过UART输出日志 （未烧写`TEST_BUILD`)：
 ```
 	1.仅处理POLL，显示为没有接收到OFFER -> 
 	主机侧日志反复显示如下：
 	   transmitting but no frames received                 [POLL帧响应]
 	   GATEWAY_CTRL: ENUM assigned=0 offer=1:
 		{"motor":"DC", "id":0, "status":"gateway_alive"}   [OFFER帧发送但未被处理]
-	从机侧日志：
+	从机侧日志：[仅显示接收到POLL，未有OFFER]
 	[t=00000316][UID=15274C76] RX POLL, myId=0, skip (UNSET)
 	[t=000005A0][UID=15274C76] RX POLL, myId=0, skip (UNSET) 
 	[t=0000082E][UID=15274C76] RX POLL, myId=0, skip (UNSET)
 	
-	2.处理多轮POLL后，处理OFFER【次数随机】 -> 
+	2.处理多轮POLL后，处理OFFER【次数随机】 -> 即随机出现assigned情况
 	主机侧日志多次“no frames received"之后：
 		GATEWAY_CTRL: ENUM assigned=1 offer=2: 1=15274c76 
 		{"motor":"DC", "id":1, "status":"standby", "height":0} 
@@ -38,9 +39,9 @@
 	[t=00000847][UID=15274C76] RX OFFER id=1, myId=0, accept, ack pending
 	[t=00000875][UID=15274C76] TX ACK id=1
 	[t=00000AD4][UID=15274C76] RX POLL, myId=1, will ACK
-	[t=00000AF6][UID=15274C76] TX ACK id=1              [并且这里也没有OFFER帧RX]
+	[t=00000AF6][UID=15274C76] TX ACK id=1              [并且这里也没有OFFER的RX]
 ```
-- 在从机侧打印时间戳后会发现`连续多次POLL之间时间差在650左右`，即分别`来自不同的cycle`，而<u>同一cycle中的OFFER帧未被处理</u>（FIFO为空，因为下一次处理的是新的POLL；且主机侧日志排除了`未成功发送OFFER`的情况）
+- 在从机侧打印时间戳后会发现`连续多次POLL之间时间差在650左右`，即分别`来自不同的cycle`，而<u>同一cycle中的OFFER帧未被处理</u>（FIFO为空，因为下一次处理的是新的POLL；且主机侧日志排除了`未成功发送OFFER`的情况 - `tx_fail=0`）
 	- *目前猜测为在handle函数中调用` USART_TxData`，串口阻塞式输出约4~7ms，对FIFO中帧处理造成影响。*
 
 2. 仅考虑原项目代码情况，但不导入`test_shell.c`&不烧写`TEST_BUILD`时（无日志输出），发现也出现了从机侧无法在上电后第一帧响应OFFER的情况：
