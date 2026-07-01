@@ -1,3 +1,6 @@
+>相关Issue文档：[[Issue]]
+>总体方案文档：[[Test_Plan]](进行单从机测试)
+
 ### 调用情况1（仅在apm32侧加串口输出日志）
 **操作**：参考[[SubPlan1Repo_Code_Modification|子方案代码修改repo]]完成了代码增改（不完全一致）
 ① 情况 1 - 只上电观察串口输出
@@ -66,7 +69,7 @@ RunControlLoop() 10ms 一次
 2. 或 APM32 CAN 控制器在冷启动头几个帧存在同步问题导致 OFFER 被硬件丢弃——用 `CAN_FLAG_F0OV` 和错误计数器可确认
 
 
-### 调用情况2：
+### 调用情况2
 **操作**：从机侧添加时间戳、CAN FIFO over标记检测；
 
 ①接主机侧串口查看日志：
@@ -166,25 +169,88 @@ I (1846) GATEWAY_CTRL: ENUM assigned=1 offer=2: 1=15274c76
 [t=000005A8][UID=15274C76] RX OFFER id=2, myId=1, already assigned
 [t=000005C2][UID=15274C76] TX ACK id=1
 ```
-- 即可以发现**调用情况1&2**关于`在从机侧使用串口输出日志会对节点分配造成影响`的猜测不正确，转而考虑`TEST_BUILD`会对该通信过程产生影响。
-	- 但由于`TEST_BUILD`本身仅仅是作为测试固件来使用，不影响CAN通信 -> *暂考虑可能原因在于时序问题影响下的FIFO溢出（从机侧无法接收同一cycle内的offer）*
+- 即可以发现[[#调用情况1（仅在apm32侧加串口输出日志）]]和[[#调用情况2]]中关于`在从机侧使用串口输出日志会对节点分配造成影响`的猜测不正确，转而考虑`TEST_BUILD`会对该通信过程产生的影响。
+	- 但由于`TEST_BUILD`本身仅仅是作为测试固件来使用，不影响CAN通信 -> *暂考虑可能原因在于时序问题影响下的FIFO溢出（因为从机侧无法接收同一cycle内的offer）*
 
 ### 调用情况4
-根据1-3的调用情况，对多种因素分别进行多次测试，统计如下：
+根据以上内容的调用情况，对多种因素分别进行多次测试，统计如下：
 
-| #   | main.c                          | ENUM_DIAG | TEST_BUILD | 结果  |
-| --- | ------------------------------- | --------- | ---------- | --- |
-| 1   | 当前<br>（即将`DebugUartSend*` 函数删除） | ON        | ON         | ❌   |
-| 2   | 原始<br>（原始项目代码，不管UART的输出调用）      | ON        | OFF        | ❌   |
-| 3   | 原始                              | OFF       | ON         | ✅   |
-| 4   | 原始                              | ON        | ON         | ✅   |
-| 5   | 原始                              | OFF       | OFF        | ❌   |
+| #   | main.c                               | ENUM_DIAG<br>（从机端串口输出日志） | TEST_BUILD | 结果  |
+| --- | ------------------------------------ | ------------------------ | ---------- | --- |
+| 1   | 当前<br>（将`DebugUartSend*` 函数删除）       | ON                       | ON         | ❌   |
+| 2   | 原始<br>（原始项目代码，不修改`DebugUartSend*`函数） | ON                       | OFF        | ❌   |
+| 3   | 原始                                   | OFF                      | ON         | ✅   |
+| 4   | 原始                                   | ON                       | ON         | ✅   |
+| 5   | 原始                                   | OFF                      | OFF        | ❌   |
 
 ### 最终发现
 **现象**：在对**单个**从机(APM32) 进行日志打印测试验证时，发现在不烧录`TEST_BUILD`固件的情况下，连续出现上电后从机仅`打印POLL接收&无OFFER接收`的情况，在主机端表现为日志中`assigned=0`状态反复循环（即`节点ID分配失败`）
 **修改方案**：apm32项目中`Source/can_service.c`内：
 1. 轮询函数`CanServicePoll`中删除`CAN_ReleaseFIFO(CAN1, CAN_RX_FIFO_0);`
 2. 遍历函数`CanServiceReceiveCommand`中删除`CAN_ReleaseFIFO(CAN1, CAN_RX_FIFO_0);`
-**原因**：apm32_can库中`CAN_RxMessage`和`CAN_ReleaseFIFO`函数有相同的`FIFO释放`流程（详见`apm32f10x_can.c : 588-595 & 614-621`），原`can_service.c`中连续调用`CAN_RxMessage`和`CAN_ReleaseFIFO`，由于主机发送的`POLL`和`OFFER`连续到达从机，会导致未读的信息帧被直接释放，表现为`从机仅收到POLL，未收到OFFER` -> `从机无id，不响应ACK` -> `主机收不到ACK，assigned不更新`。
+**原因**：
+apm32_can库中`CAN_RxMessage`和`CAN_ReleaseFIFO`函数有相同的`FIFO释放`流程：
+```c 
+//apm32f10x_can.c库函数
+void CAN_RxMessage(CAN_T* can, CAN_RX_FIFO_T FIFONumber, CAN_RxMessage_T* RxMessage)
+{
+	...
+	if (FIFONumber == CAN_RX_FIFO_0)
+    {
+        can->RXF0_B.RFOM0 = BIT_SET;
+    }
+    else
+    {
+        can->RXF1_B.RFOM1 = BIT_SET;
+    }//FIFO释放
+}
+
+void CAN_ReleaseFIFO(CAN_T* can, CAN_RX_FIFO_T FIFONumber)
+{
+    if (FIFONumber == CAN_RX_FIFO_0)
+    {
+        can->RXF0_B.RFOM0 = BIT_SET;
+    }
+    else
+    {
+        can->RXF1_B.RFOM1 = BIT_SET;
+    }//相同代码
+}
+
+```
+
+原`can_service.c`中连续调用`CAN_RxMessage`和`CAN_ReleaseFIFO`：
+```c
+void CanServicePoll(void)
+{
+    /* Emit a due ENUM_ACK (uid-backoff after a POLL/OFFER/ASSIGN). */
+    CanServiceServiceAck();
+    
+#ifdef ENUM_DIAG
+    if (CAN_ReadStatusFlag(CAN1, CAN_FLAG_F0OVR) != RESET)
+    {
+        EnumDiagLogFifoOverrun();
+        CAN_ClearStatusFlag(CAN1, CAN_FLAG_F0OVR);
+    }
+#endif
+  
+    if ((s_hasPendingRx == 0U) && (CAN_ReadStatusFlag(CAN1, CAN_FLAG_F0MP) != RESET))
+    {
+        CAN_RxMessage_T rx;
+        CAN_RxMessage(CAN1, CAN_RX_FIFO_0, &rx); //函数内已释放FIFO
+        CAN_ReleaseFIFO(CAN1, CAN_RX_FIFO_0);    //又释放一次
+        
+        /* Handle master enumeration frames inline; buffer everything else. */
+        if (!CanServiceHandleEnum(&rx))
+        {
+            s_pendingRx = rx;
+            s_hasPendingRx = 1U;
+        }
+    }
+}
+```
+由于主机发送的`POLL`和`OFFER`连续到达从机，会导致未读的信息帧被直接释放，表现为`从机仅收到POLL，未收到OFFER` -> `从机无id，不响应ACK` -> `主机收不到ACK，assigned不更新`。
+
 **与`TEST_BUILD`的关系**：可能是由于TEST固件中的UART阻塞式调用和函数不同方式定义导致的系统时序变动，恰好错开了以上情况。
+
 **修改后结果**：重新尝试`烧写/不烧写TEST固件`，节点均分配正常：①从机端日志正常输出`RX POLL | RX OFFER | TX ACK`的周期循环；②主机端日志在上电后第一周期内即可成功对该唯一从机分配id，正确更新`assigned`值。
