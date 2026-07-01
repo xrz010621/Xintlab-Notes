@@ -1,0 +1,258 @@
+{
+  "main": {
+    "id": "7ff01f8dfbd294ff",
+    "type": "split",
+    "children": [
+      {
+        "id": "2c59cbef0316628a",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "9ae7166ea621048a",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "节点ID分配异常/Code_Modification1.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Code_Modification1"
+            }
+          },
+          {
+            "id": "03d546f074da53ca",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "WeekReport/week1.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "week1"
+            }
+          },
+          {
+            "id": "a3a6ce10f9f921d7",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "节点ID分配异常/技术文档 - 多 APM32 节点 ID 分配机制分析.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "技术文档 - 多 APM32 节点 ID 分配机制分析"
+            }
+          }
+        ],
+        "currentTab": 1
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "256db04e10834533",
+    "type": "split",
+    "children": [
+      {
+        "id": "2f16b9ddd99ad5d2",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "1af92d6d7ab05c04",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": true
+              },
+              "icon": "lucide-folder-closed",
+              "title": "文件列表"
+            }
+          },
+          {
+            "id": "b4f9a26b1ba3baf2",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "搜索"
+            }
+          },
+          {
+            "id": "6eee52d56c67ecdd",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "书签"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 200
+  },
+  "right": {
+    "id": "ef9c87248229adc5",
+    "type": "split",
+    "children": [
+      {
+        "id": "cb20901c1637e51c",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "af6d34206b6cdaa7",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "节点ID分配异常/CODE_MODIFICATION.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "CODE_MODIFICATION 的反向链接列表"
+            }
+          },
+          {
+            "id": "2b427a78d71133df",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "small 笔记.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "small 笔记 的出链列表"
+            }
+          },
+          {
+            "id": "db1a72d4ef1e13bf",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-tags",
+              "title": "标签"
+            }
+          },
+          {
+            "id": "06b7f5056f3ac484",
+            "type": "leaf",
+            "state": {
+              "type": "all-properties",
+              "state": {
+                "sortOrder": "frequency",
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-archive",
+              "title": "添加笔记属性"
+            }
+          },
+          {
+            "id": "c4615704c6aa9718",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "small 笔记.md",
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-list",
+              "title": "small 笔记 的大纲"
+            }
+          }
+        ],
+        "currentTab": 3
+      }
+    ],
+    "direction": "horizontal",
+    "width": 200
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:打开快速切换": false,
+      "graph:查看关系图谱": false,
+      "canvas:新建白板": false,
+      "daily-notes:打开/创建今天的日记": false,
+      "templates:插入模板": false,
+      "command-palette:打开命令面板": false,
+      "bases:新建数据库": false,
+      "remotely-save:Remotely Save": false,
+      "obsidian-git:Open Git source control": false
+    }
+  },
+  "active": "03d546f074da53ca",
+  "lastOpenFiles": [
+    "节点ID分配异常/技术文档 - 多 APM32 节点 ID 分配机制分析.md",
+    "week1.md",
+    "WeekReport/week1.md",
+    "WeekReport",
+    "周报",
+    "新建文件夹",
+    "节点ID分配异常/SubPlan1Repo_Code_Modification.md",
+    "节点ID分配异常/SubPlan1_Slave_Diag.md",
+    "节点ID分配异常/Test_Plan.md",
+    "节点ID分配异常/Debug过程记录.md",
+    "节点ID分配异常/ENUM_DIAG_BUF_Solution.md",
+    "节点ID分配异常/ISSUE.md",
+    "节点ID分配异常/SubPlan2_Diag_Enhance.md",
+    "节点ID分配异常/未命名.md",
+    "节点ID分配异常/单从机测试异常分析.md",
+    "Project/puttreal-firmware-apm32/motor_control_apm32/app/Project/Objects/calib_storage.__i",
+    "Project/puttreal-firmware-apm32/motor_control_apm32/app/Project/Objects/can_service.__i",
+    "Project/puttreal-firmware-apm32/motor_control_apm32/app/Project/Objects/board_driver.__i",
+    "Project/puttreal-firmware-apm32/motor_control_apm32/app/Project/Objects/apm32f10x_int.__i",
+    "Project/puttreal-firmware-apm32/motor_control_apm32/app/Project/Objects/adc_service.__i",
+    "Project/puttreal-firmware-apm32/motor_control_apm32/app/Project/DC_Motor_APM32.uvguix.MINIS FORUM.MINIS FORUM.tmp",
+    "Project/puttreal-firmware-apm32/motor_control_apm32/app/Project/DC_Motor_APM32.uvoptx.MINIS FORUM.tmp",
+    "节点ID分配异常/Code_Modification1.md",
+    "MT6701固件测试/2.首次工作调试问题报告.md",
+    "Pasted image 20260629153133.png",
+    "节点ID分配异常/pictures/{C96601B5-9CDF-4819-A5E9-5CB2AE81A3E4}.png",
+    "MT6701固件测试/3.项目技术参考文档.md",
+    "节点ID分配异常/pictures/{A4F8C490-97C6-4211-BB90-07E0AB7FD849}.png",
+    "节点ID分配异常/pictures/{84EE7D55-49B3-4B41-AF5C-CC1B061BCBA5}.png",
+    "节点ID分配异常/pictures/{E565757C-B8E1-4023-8301-79D940A90479}.png",
+    "{84EE7D55-49B3-4B41-AF5C-CC1B061BCBA5}.png",
+    "{A4F8C490-97C6-4211-BB90-07E0AB7FD849}.png",
+    "{C96601B5-9CDF-4819-A5E9-5CB2AE81A3E4}.png",
+    "节点ID分配异常/{E565757C-B8E1-4023-8301-79D940A90479}.png",
+    "MT6701固件测试/1.精度测试方案文档.md",
+    "欢迎.md",
+    "创建链接.md",
+    "small 笔记.md"
+  ]
+}
