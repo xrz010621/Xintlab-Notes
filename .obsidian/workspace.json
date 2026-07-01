@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "节点ID分配异常/Code_Modification1.md",
+                "file": "节点ID分配异常/ENUM_DIAG_BUF_Solution.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Code_Modification1"
+              "title": "ENUM_DIAG_BUF_Solution"
             }
           },
           {
@@ -107,7 +107,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 200
+    "width": 270.5
   },
   "right": {
     "id": "ef9c87248229adc5",
@@ -193,9 +193,19 @@
               "icon": "lucide-list",
               "title": "small 笔记 的大纲"
             }
+          },
+          {
+            "id": "59439c707f04de2c",
+            "type": "leaf",
+            "state": {
+              "type": "git-view",
+              "state": {},
+              "icon": "git-pull-request",
+              "title": "Source Control"
+            }
           }
         ],
-        "currentTab": 3
+        "currentTab": 5
       }
     ],
     "direction": "horizontal",
@@ -216,9 +226,10 @@
   },
   "active": "03d546f074da53ca",
   "lastOpenFiles": [
+    "节点ID分配异常/ENUM_DIAG_BUF_Solution.md",
     "节点ID分配异常/技术文档 - 多 APM32 节点 ID 分配机制分析.md",
-    "week1.md",
     "WeekReport/week1.md",
+    "week1.md",
     "WeekReport",
     "周报",
     "新建文件夹",
@@ -226,7 +237,6 @@
     "节点ID分配异常/SubPlan1_Slave_Diag.md",
     "节点ID分配异常/Test_Plan.md",
     "节点ID分配异常/Debug过程记录.md",
-    "节点ID分配异常/ENUM_DIAG_BUF_Solution.md",
     "节点ID分配异常/ISSUE.md",
     "节点ID分配异常/SubPlan2_Diag_Enhance.md",
     "节点ID分配异常/未命名.md",
