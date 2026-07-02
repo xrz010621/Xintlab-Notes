@@ -9,3 +9,21 @@
 >只有"电流一直很大"并且"角度一直没有明显前进"，才认为堵转
 >`Current High  AND  No Progress`
 
+1.
+```c
+/* s_motionGraceMs: remaining post-command stall-detection grace
+ * 命令刚发出去以后的一段宽限期 */
+if (s_motionGraceMs > 0U)
+    {
+        /* Post-command grace (see ControlProtectionOnMotionCommand): keep the
+         * window anchored to wherever the shaft is so the 500 ms judgement
+         * starts fresh when the grace runs out. */
+        /* 将窗口固定在轴的任何位置，以便在宽限期结束时重新开始500毫秒的判断。*/
+        s_motionGraceMs = (s_motionGraceMs > CONTROL_LOOP_MS)
+                              ? (uint16_t)(s_motionGraceMs - CONTROL_LOOP_MS)
+                              : 0U;
+        s_stallAnchor = angleDeg;
+        s_stallMs = 0U;
+        s_stall = 0U;
+    }
+```
