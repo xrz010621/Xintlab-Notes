@@ -15,12 +15,15 @@
 - **ESP32 主控**：唯一主控，拥有节点 ID 分配权，所有从机被动接受。
 - **APM32 从机**：上电即处于 `NODE_ID_UNSET(0)` 状态，**不响应任何电机指令**，只响应枚举帧。
 
-| 项目      | 取值                                | 来源                               |
-| ------- | --------------------------------- | -------------------------------- |
-| MCU     | APM32F103CBT6（Cortex-M3 @ 72 MHz） | `README.md`、`system_apm32f10x.c` |
-| CAN 波特率 | 50 kbps                           | `board_driver.c`、`app_config.h`  |
-| PWM     | TIM3_CH4，5 kHz                    | `board_config.h:18`              |
-| 节点 ID 范围 | 1–6（主控分配） | `app_config.h:29-30` |
+**从机固件技术指标**
+
+| 项目       | 取值                                | 来源                               |
+| -------- | --------------------------------- | -------------------------------- |
+| MCU      | APM32F103CBT6（Cortex-M3 @ 72 MHz） | `README.md`、`system_apm32f10x.c` |
+| CAN 波特率  | 50 kbps                           | `board_driver.c`、`app_config.h`  |
+| PWM      | TIM3_CH4，5 kHz                    | `board_config.h:18`              |
+| 节点 ID 范围 | 1–6（主控分配）                         | `app_config.h:29-30`             |
+
 
 
 
