@@ -1,3 +1,4 @@
+### 缺陷1 电流堵转 —— 失效
 #### **代码位置**：[control_protection.c:88-125]
 **函数：void ControlProtectionUpdate(uint16_t currentMa, uint16_t angleDeg)**
 这个函数整体是在**每个控制周期（`CONTROL_LOOP_MS`）更新保护状态**。它维护了三类保护：
@@ -104,3 +105,13 @@ else
 ##### 3 Issue42对应场景
 > "阻尼器退化后电机空转、**电流仅约 0.3–0.4 A**"  ->  即该电流 < 800mA的阈值`STALL_CURRENT_LIMIT_MA`，从判定的角度属于**正常电流状态**，无法触发堵转累计。
 
+##### 4 问题总结
+`ControlProtectionUpdate()` 的 stall 检测是一个**合取门**（AND gate）：
+
+```
+stall = (电流 ≥ 800mA) ∧ (净进展 < 0.2°) ∧ (累积 ≥ 500ms)
+```
+
+退化阻尼器场景下，第一个条件 `电流 ≥ 800mA` 不成立，整个合取表达式短路为 false。**角度信息虽然在参数中传入（`angleDeg`），但在 L120-125 的 else 分支中仅用于重置锚点，不做任何堵转判定。**
+
+### 缺陷2 角度堵转 ——又慢又易被绕过
