@@ -127,5 +127,9 @@ motor_ctrl_update()
 ├─ motor_ctrl_angle_is_valid(now_angle) 角度传感器数据有效 (否) -> return false
 |  更新轨迹
 |  计时增加
-├─
+├─ 启动: is_startup_phase 是否已经克服静摩擦(移动>0.5度或超时) -> 若是则退出“启动阶段”
+|
+|
+├─ 堵转Detection: fabsf(pos_err) > POSITION_TOLERANCE(1.5°) 距离目标较远
+|    ├─ |now_angle - ctrl->stall_anchor_angle| >= STALL_PROGRESS_DEG
 ```
