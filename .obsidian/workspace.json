@@ -69,12 +69,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "PuttReal 电机控制器固件 — 技术规格书.md",
+                "file": "堵转保护/方案1.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "PuttReal 电机控制器固件 — 技术规格书"
+              "title": "方案1"
             }
           },
           {
@@ -179,7 +179,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "PuttReal 电机控制器固件 — 技术规格书.md",
+                "file": "堵转保护/方案1.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -189,7 +189,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "PuttReal 电机控制器固件 — 技术规格书 的反向链接列表"
+              "title": "方案1 的反向链接列表"
             }
           },
           {
@@ -281,8 +281,9 @@
   },
   "active": "93daa96faf3c369e",
   "lastOpenFiles": [
-    "堵转保护/分析note.md",
     "PuttReal 电机控制器固件 — 技术规格书.md",
+    "堵转保护/方案1.md",
+    "堵转保护/分析note.md",
     "堵转保护/Issue42.md",
     "节点ID分配异常/单从机id分配异常测试过程和结果记录.md",
     "节点ID分配异常/技术文档 - 多 APM32 节点 ID 分配机制分析.md",
@@ -324,7 +325,6 @@
     "{84EE7D55-49B3-4B41-AF5C-CC1B061BCBA5}.png",
     "{A4F8C490-97C6-4211-BB90-07E0AB7FD849}.png",
     "{C96601B5-9CDF-4819-A5E9-5CB2AE81A3E4}.png",
-    "节点ID分配异常/{E565757C-B8E1-4023-8301-79D940A90479}.png",
-    "欢迎.md"
+    "节点ID分配异常/{E565757C-B8E1-4023-8301-79D940A90479}.png"
   ]
 }
