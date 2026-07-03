@@ -121,5 +121,11 @@ stall = (电流 ≥ 800mA) ∧ (净进展 < 0.2°) ∧ (累积 ≥ 500ms)
 ##### 总体逻辑拓扑
 ```
 motor_ctrl_update()
-├─ fault_latched 故障s'y
+├─ fault_latched 故障锁存判定 (是) -> 速度归零，return false
+├─ MOTOR_STATUS_RUNNING 电机运行状态判定 (否) -> return false
+├─ SUB_MODE_SPEED 子模式速度模式判定 (是) -> return false
+├─ motor_ctrl_angle_is_valid(now_angle) 角度传感器数据有效 (否) -> return false
+|  更新轨迹
+|  计时增加
+├─
 ```
