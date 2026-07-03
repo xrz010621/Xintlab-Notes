@@ -38,7 +38,7 @@ main() while(1):
 ```
 所以 `ControlProtectionUpdate()` 的调用周期精确等于 `CONTROL_LOOP_MS` = **10ms**。
 ##### **2 Stall Detection**
->只有"电流一直很大"并且"角度一直没有明显前进"，才认为堵转
+>只有"电流**一直很大**"并且"角度一直没有明显前进"，才认为堵转
 >`Current High  AND  No Progress`
 
 **1）起步宽限期 (Motion Grace Period)**
@@ -102,4 +102,5 @@ else
 ```
 
 ##### 3 Issue42对应场景
-> 阻尼器退化后电机空转、**电流仅约 0.3–0.4 A**，即该电流 < 800mA的阈值`STALL_CURRENT_LIMIT_MA`，
+> "阻尼器退化后电机空转、**电流仅约 0.3–0.4 A**"  ->  即该电流 < 800mA的阈值`STALL_CURRENT_LIMIT_MA`，从判定的角度属于**正常电流状态**，无法触发堵转累计。
+

@@ -78,6 +78,20 @@
             }
           },
           {
+            "id": "9c294e13b3446a2c",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "PuttReal 电机控制器固件 — 技术规格书.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "PuttReal 电机控制器固件 — 技术规格书"
+            }
+          },
+          {
             "id": "dcb57e1a699c97b0",
             "type": "leaf",
             "state": {
@@ -92,7 +106,7 @@
             }
           }
         ],
-        "currentTab": 4
+        "currentTab": 5
       }
     ],
     "direction": "vertical"
@@ -165,7 +179,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "堵转保护/分析note.md",
+                "file": "PuttReal 电机控制器固件 — 技术规格书.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -175,7 +189,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "分析note 的反向链接列表"
+              "title": "PuttReal 电机控制器固件 — 技术规格书 的反向链接列表"
             }
           },
           {
@@ -265,13 +279,14 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "830f28b811fb1e51",
+  "active": "9c294e13b3446a2c",
   "lastOpenFiles": [
     "堵转保护/Issue42.md",
+    "PuttReal 电机控制器固件 — 技术规格书.md",
     "堵转保护/分析note.md",
+    "节点ID分配异常/单从机id分配异常测试过程和结果记录.md",
     "节点ID分配异常/技术文档 - 多 APM32 节点 ID 分配机制分析.md",
     "带灯双按钮控制器/Introduction.md",
-    "节点ID分配异常/单从机id分配异常测试过程和结果记录.md",
     "带灯双按钮控制器",
     "节点ID分配异常/Issue32.md",
     "MT6701固件测试/2.首次工作调试问题报告.md",
@@ -310,7 +325,6 @@
     "{A4F8C490-97C6-4211-BB90-07E0AB7FD849}.png",
     "{C96601B5-9CDF-4819-A5E9-5CB2AE81A3E4}.png",
     "节点ID分配异常/{E565757C-B8E1-4023-8301-79D940A90479}.png",
-    "欢迎.md",
-    "创建链接.md"
+    "欢迎.md"
   ]
 }
