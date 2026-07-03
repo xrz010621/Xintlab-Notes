@@ -121,15 +121,52 @@ stall = (电流 ≥ 800mA) ∧ (净进展 < 0.2°) ∧ (累积 ≥ 500ms)
 ##### 总体逻辑拓扑
 ```
 motor_ctrl_update()
+|
 ├─ fault_latched 故障锁存判定 (是) -> 速度归零，return false
+|
 ├─ MOTOR_STATUS_RUNNING 电机运行状态判定 (否) -> return false
+|
 ├─ SUB_MODE_SPEED 子模式速度模式判定 (是) -> return false
+|
 ├─ motor_ctrl_angle_is_valid(now_angle) 角度传感器数据有效 (否) -> return false
+|
 |  更新轨迹
-|  计时增加
+|
+|  timeout_counter计时增加
+|
 ├─ 启动: is_startup_phase 是否已经克服静摩擦(移动>0.5度或超时) -> 若是则退出“启动阶段”
 |
 |
 ├─ 堵转Detection: fabsf(pos_err) > POSITION_TOLERANCE(1.5°) 距离目标较远
-|    ├─ |now_angle - ctrl->stall_anchor_angle| >= STALL_PROGRESS_DEG
+|    ├─ |now_angle - ctrl->stall_anchor_angle| >= STALL_PROGRESS_DEG(0.5°)
+           [净进度大于步进窗口]
+             -> 重锚
+|    └─ 累积Stall计数
+|
+|
+└─ 核心状态判定
+    |
+    ├─ |pos_err| <= POSITION_ARRIVE_DEADBAND [目标距离死区范围内] && 
+        |derivative| < ARRIVE_SPEED_THRESH [速度减小至阈值范围] &&
+        |ctrl->profile_velocity|  < ARRIVE_SPEED_THRESH * 100.0f
+        误差极小&速度极低 -> 停机，切换为“已到达”状态
+    | 
+    ├─ ctrl->stall_counter > STALL_DETECT_CYCLES 
+        净进度堵转时间超过周期窗口(3s) -> “堵转”状态
+    
+    |
+    ├─ timeout_counter > timeout_ms(6000ms) 
+        超过6s没有判定为“到达”和“堵转” -> "超时"状态
+    |
+    └─ PID运算与动力输出 (正常运行控制) - 计算基础输出：PD控制 + 速度前馈(Feedforward)
+        |
+        ├─ “启动阶段” 
+             阶段 1 (Kick)：输出瞬时高PWM脉冲，打破静摩擦。
+             阶段 2 (Ramp)：PWM线性爬升，直到追上PD计算值或目标限速。
+        |
+        └─ 常规运行阶段
+             
+    
+            
+
 ```
