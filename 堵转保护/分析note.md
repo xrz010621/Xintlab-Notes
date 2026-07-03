@@ -165,7 +165,12 @@ motor_ctrl_update()
              阶段 2 (Ramp)：PWM线性爬升，直到追上PD计算值或目标限速。
         |
         └─ 常规运行阶段
-             
+             保证输出不低于最小驱动力 (`min_pwm`)
+             |
+             └─ |pos_err| > POSITION_ARRIVE_DEADBAND &&  
+                |pos_err| <= POSITION_TOLERANCE 
+                [非常接近目标点在 Tolerance 范围内，但还没进入完全不管的 Deadband 死区时]
+                -> 强制施加最小驱动力(min_pwm)的creep动力
     
             
 

@@ -92,7 +92,7 @@
             }
           }
         ],
-        "currentTab": 4
+        "currentTab": 3
       }
     ],
     "direction": "vertical"
@@ -165,7 +165,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "堵转保护/分析note.md",
+                "file": "堵转保护/方案1.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -175,7 +175,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "分析note 的反向链接列表"
+              "title": "方案1 的反向链接列表"
             }
           },
           {
@@ -265,14 +265,14 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "830f28b811fb1e51",
+  "active": "93daa96faf3c369e",
   "lastOpenFiles": [
+    "堵转保护/分析note.md",
+    "堵转保护/方案1.md",
     "PuttReal 电机控制器固件 — 技术规格书.md",
     "堵转保护/Issue42.md",
-    "堵转保护/分析note.md",
     "节点ID分配异常/单从机id分配异常测试过程和结果记录.md",
     "节点ID分配异常/Issue32.md",
-    "堵转保护/方案1.md",
     "节点ID分配异常/技术文档 - 多 APM32 节点 ID 分配机制分析.md",
     "带灯双按钮控制器/Introduction.md",
     "带灯双按钮控制器",
