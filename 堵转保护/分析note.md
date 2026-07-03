@@ -55,7 +55,8 @@ else if (currentMa >= STALL_CURRENT_LIMIT_MA)
         }
     }
 ```
-- 当前电流>=`STALL_CURRENT_LIMIT_MA`(800mA)时，
+- 当前电流>=`STALL_CURRENT_LIMIT_MA`(800mA)时，才开始判定堵转：
+- 
 **3.正常电流状态**
 ```c
 else
