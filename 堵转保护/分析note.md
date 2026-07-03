@@ -115,3 +115,11 @@ stall = (电流 ≥ 800mA) ∧ (净进展 < 0.2°) ∧ (累积 ≥ 500ms)
 退化阻尼器场景下，第一个条件 `电流 ≥ 800mA` 不成立，整个合取表达式短路为 false。**角度信息虽然在参数中传入（`angleDeg`），但在 L120-125 的 else 分支中仅用于重置锚点，不做任何堵转判定。**
 
 ### 缺陷2 角度堵转 ——又慢又易被绕过
+#### **代码位置**：[motor_controller.c:316-350]
+**函数：bool motor_ctrl_update(motor_ctrl_t \*ctrl, float now_angle)**
+
+##### 总体逻辑拓扑
+```
+motor_ctrl_update()
+├─ fault_latched 故障s'y
+```
