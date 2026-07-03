@@ -5,11 +5,43 @@
 2. 过流保护（Overcurrent）
 3. 堵转保护（Current-based stall detection）
 
-##### **Stall Detection**
+##### 1 调用链
+```
+main() @ main.c:970
+  └─ while(1)
+       └─ RunControlLoop() @ main.c:693           ← 每 10ms 执行一次
+            │
+            ├─ ① CanServicePoll / ProcessCanCommand  ← 处理 CAN 帧
+            │    └─ ControlProtectionSetCommandTimestamp()   ← 任何 CAN 帧都刷新
+            │    └─ ControlProtectionOnMotionCommand()       ← 仅 CONTROL 帧触发
+            │
+            ├─ ② nowAngle = motor_ctrl_get_angle()   //得到当前角度
+            │
+            ├─ ③ if (校准中) → CalibrationUpdate(); return;  ← 校准期间跳过保护
+            │
+            ├─ ④ if (启动阶段 is_startup_phase) → 仅刷新时间戳，不调用 Update  ← L759-762
+            │
+            └─ ⑤ else → 正式执行保护 ───────────────────────┐
+                 currentMa = AdcServiceReadMotorCurrentMilliAmp();//读进电机当前电流
+                 angleCenti = (uint16_t)(nowAngle * 100.0);
+                 ControlProtectionUpdate(currentMa, angleCenti);  ← ★ 分析目标
+                 │
+                 └─ if (stall || overcurrent)
+                      motor_ctrl_force_fault() → 停机
+                      CanServiceSendFeedback() → 上报 ERROR
+```
+**时序：**
+```c
+main() while(1):
+    RunControlLoop()
+    SystemTickDelayMs(CONTROL_LOOP_MS)   // = 10ms
+```
+所以 `ControlProtectionUpdate()` 的调用周期精确等于 `CONTROL_LOOP_MS` = **10ms**。
+##### **2 Stall Detection**
 >只有"电流一直很大"并且"角度一直没有明显前进"，才认为堵转
 >`Current High  AND  No Progress`
 
-**1.起步宽限期 (Motion Grace Period)**
+**1) 起步宽限期 (Motion Grace Period)**
 ```c
 /* s_motionGraceMs: remaining post-command stall-detection grace
  * 命令刚发出去以后的一段宽限期 */
@@ -22,11 +54,13 @@ if (s_motionGraceMs > 0U)
         s_motionGraceMs = (s_motionGraceMs > CONTROL_LOOP_MS)
                               ? (uint16_t)(s_motionGraceMs - CONTROL_LOOP_MS)
                               : 0U;
+        //安全的防溢出递减操作            
         s_stallAnchor = angleDeg;
         s_stallMs = 0U;
         s_stall = 0U;
     }
 ```
+- `s_motionGraceMs`：每次运动命令后的宽限期（ms），在此期间，基于电流的失速检测器仅重新锚定，从不累积。
 - 如果 `s_motionGraceMs > 0`，说明系统刚刚下发了新动作指令，给予一段“宽限期”。
 - 在这个期间内，不进行堵转判定，定时器只负责递减宽限时间。
 - **关键动作**：不断将当前的轴角度 (`angleDeg`) 刷新为“锚点”(`s_stallAnchor`)。这确保了当宽限期结束时，堵转判定的起点是最新的实际位置。
@@ -56,7 +90,7 @@ else if (currentMa >= STALL_CURRENT_LIMIT_MA)
     }
 ```
 - 当前电流>=`STALL_CURRENT_LIMIT_MA`(800mA)时，才开始判定堵转：
-- 
+- 计算`moved`净位移量（当前角度与锚点角度）
 **3.正常电流状态**
 ```c
 else
