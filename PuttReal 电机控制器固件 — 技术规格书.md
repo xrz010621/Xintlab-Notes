@@ -50,29 +50,29 @@
 
 ### 1.1 关键规格
 
-|**项目**|**值**|**来源**|
-|---|---|---|
-|MCU|APM32F103CBT6 (Cortex-M3 @ 72 MHz)|`README.md`, `system_apm32f10x.c`|
-|Flash / RAM|128 KB / 20 KB|`ota_layout.h`|
-|CAN 波特率|50 kbps|`board_driver.c`, `app_config.h`|
-|控制周期|10 ms (`CONTROL_LOOP_MS`)|`app_config.h:44`|
-|编码器|MT6701，14位绝对角度，软件 I²C|`board_config.h`, `sensor_mt6701.c`|
-|PWM|TIM3_CH4, 5 kHz|`board_config.h:18`|
-|节点 ID 范围|1–6 (由主机分配)|`app_config.h:29-30`|
-|控制算法|PD + 梯形速度曲线规划 + 速度前馈|`motor_controller.c`|
+| **项目**      | **值**                              | **来源**                              |
+| ----------- | ---------------------------------- | ----------------------------------- |
+| MCU         | APM32F103CBT6 (Cortex-M3 @ 72 MHz) | `README.md`, `system_apm32f10x.c`   |
+| Flash / RAM | 128 KB / 20 KB                     | `ota_layout.h`                      |
+| CAN 波特率     | 50 kbps                            | `board_driver.c`, `app_config.h`    |
+| 控制周期        | 10 ms (`CONTROL_LOOP_MS`)          | `app_config.h:44`                   |
+| 编码器         | MT6701，14位绝对角度，软件 I²C              | `board_config.h`, `sensor_mt6701.c` |
+| PWM         | TIM3_CH4, 5 kHz                    | `board_config.h:18`                 |
+| 节点 ID 范围    | 1–6 (由主机分配)                        | `app_config.h:29-30`                |
+| 控制算法        | PD + 梯形速度曲线规划 + 速度前馈               | `motor_controller.c`                |
 
 ## 2. 硬件与引脚映射
 
 参见硬件规格 `APM32_Motor_Controller_HW_Spec_V1.2`（内部标签 "version V1.2", 2026-05-27; PCBA `APM32_DRV8876_V1.2`）。固件引脚定义集中在 `app/Include/board_config.h` 中。
 
-|**功能**|**器件**|**MCU 引脚**|
-|---|---|---|
-|电机驱动 (PH/EN)|DRV8876|`EN`=PB1 (TIM3_CH4 PWM, 5 kHz), `PH`=PB0, `nSLEEP`=PA7, `nFAULT`=PA6|
-|电流采样|DRV8876 IPROPI → R8 (2.2 kΩ)|PA0 / ADC1_IN0|
-|角度反馈|MT6701 (软件位带 I²C)|`SDA`=PB10, `SCL`=PB11|
-|CAN|SIT65HVD230 收发器|`RX`=PA11, `TX`=PA12|
-|状态 LED|—|PB2|
-|调试 UART1|WCH USB-UART|`TX`=PA9, `RX`=PA10 @ 115200 8N1|
+| **功能**       | **器件**                       | **MCU 引脚**                                                           |
+| ------------ | ---------------------------- | -------------------------------------------------------------------- |
+| 电机驱动 (PH/EN) | DRV8876                      | `EN`=PB1 (TIM3_CH4 PWM, 5 kHz), `PH`=PB0, `nSLEEP`=PA7, `nFAULT`=PA6 |
+| 电流采样         | DRV8876 IPROPI → R8 (2.2 kΩ) | PA0 / ADC1_IN0                                                       |
+| 角度反馈         | MT6701 (软件位带 I²C)            | `SDA`=PB10, `SCL`=PB11                                               |
+| CAN          | SIT65HVD230 收发器              | `RX`=PA11, `TX`=PA12                                                 |
+| 状态 LED       | —                            | PB2                                                                  |
+| 调试 UART1     | WCH USB-UART                 | `TX`=PA9, `RX`=PA10 @ 115200 8N1                                     |
 
 电流转换 (`board_config.h:23-26`)：IPROPI 增益 1000 µA/A，采样电阻 2.2 kΩ，ADC 满量程 4095 = 3300 mV。
 
