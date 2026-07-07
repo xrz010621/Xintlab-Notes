@@ -336,13 +336,13 @@ output = kp * error + kd * derivative + TRAJ_VEL_FF_GAIN * profile_velocity;
 
 ### 9.3 状态与故障码
 
-|**状态码 (app_config.h:113-117)**|**值**|**故障码 (:119-123)**|**值**|
-|---|---|---|---|
-|`MOTOR_STATUS_IDLE`|0|`MOTOR_FAULT_NONE`|0|
-|`MOTOR_STATUS_RUNNING`|1|`MOTOR_FAULT_STALL`|1|
-|`MOTOR_STATUS_ARRIVED`|2|`MOTOR_FAULT_TIMEOUT`|2|
-|`MOTOR_STATUS_ERROR`|3|`MOTOR_FAULT_SENSOR`|3|
-|`MOTOR_STATUS_SENSOR_ERROR`|4|`MOTOR_FAULT_OVERCURRENT`|4|
+| **状态码 (app_config.h:113-117)** | **值** | **故障码 (:119-123)**        | **值** |
+| ------------------------------ | ----- | ------------------------- | ----- |
+| `MOTOR_STATUS_IDLE`            | 0     | `MOTOR_FAULT_NONE`        | 0     |
+| `MOTOR_STATUS_RUNNING`         | 1     | `MOTOR_FAULT_STALL`       | 1     |
+| `MOTOR_STATUS_ARRIVED`         | 2     | `MOTOR_FAULT_TIMEOUT`     | 2     |
+| `MOTOR_STATUS_ERROR`           | 3     | `MOTOR_FAULT_SENSOR`      | 3     |
+| `MOTOR_STATUS_SENSOR_ERROR`    | 4     | `MOTOR_FAULT_OVERCURRENT` | 4     |
 
 故障会被锁存并通过 CAN 报告；恢复需要急停 / 故障清除命令。
 

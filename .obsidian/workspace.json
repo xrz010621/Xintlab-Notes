@@ -92,7 +92,7 @@
             }
           }
         ],
-        "currentTab": 2
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -165,7 +165,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "堵转保护/修改方案文档.md",
+                "file": "PuttReal 电机控制器固件 — 技术规格书.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -175,7 +175,7 @@
                 "unlinkedCollapsed": false
               },
               "icon": "links-coming-in",
-              "title": "修改方案文档 的反向链接列表"
+              "title": "PuttReal 电机控制器固件 — 技术规格书 的反向链接列表"
             }
           },
           {
@@ -265,10 +265,10 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "93daa96faf3c369e",
+  "active": "d77a152a60ca212c",
   "lastOpenFiles": [
-    "堵转保护/代码分析note.md",
     "堵转保护/修改方案文档.md",
+    "堵转保护/代码分析note.md",
     "堵转保护/Issue42.md",
     "带灯双按钮控制器/P1-EMBD Introduction.md",
     "带灯双按钮控制器/回球路线测试.md",
