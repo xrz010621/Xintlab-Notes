@@ -106,7 +106,7 @@
             }
           }
         ],
-        "currentTab": 3
+        "currentTab": 5
       }
     ],
     "direction": "vertical"
@@ -179,7 +179,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "堵转保护/方案1.md",
+                "file": "堵转保护/Issue42.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -189,7 +189,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "方案1 的反向链接列表"
+              "title": "Issue42 的反向链接列表"
             }
           },
           {
@@ -279,11 +279,11 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "93daa96faf3c369e",
+  "active": "dcb57e1a699c97b0",
   "lastOpenFiles": [
+    "堵转保护/方案1.md",
     "堵转保护/Issue42.md",
     "堵转保护/分析note.md",
-    "堵转保护/方案1.md",
     "PuttReal 电机控制器固件 — 技术规格书.md",
     "bringup固件.md",
     "节点ID分配异常/单从机id分配异常测试过程和结果记录.md",
