@@ -106,7 +106,7 @@
             }
           }
         ],
-        "currentTab": 5
+        "currentTab": 3
       }
     ],
     "direction": "vertical"
@@ -179,7 +179,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "堵转保护/Issue42.md",
+                "file": "堵转保护/方案1.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -189,7 +189,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Issue42 的反向链接列表"
+              "title": "方案1 的反向链接列表"
             }
           },
           {
@@ -279,12 +279,13 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "dcb57e1a699c97b0",
+  "active": "93daa96faf3c369e",
   "lastOpenFiles": [
-    "堵转保护/方案1.md",
-    "堵转保护/分析note.md",
     "堵转保护/Issue42.md",
     "PuttReal 电机控制器固件 — 技术规格书.md",
+    "bringup固件.md",
+    "堵转保护/方案1.md",
+    "堵转保护/分析note.md",
     "节点ID分配异常/单从机id分配异常测试过程和结果记录.md",
     "节点ID分配异常/Issue32.md",
     "节点ID分配异常/技术文档 - 多 APM32 节点 ID 分配机制分析.md",
@@ -318,7 +319,6 @@
     "节点ID分配异常/Code_Modification1.md",
     "Pasted image 20260629153133.png",
     "节点ID分配异常/pictures/{C96601B5-9CDF-4819-A5E9-5CB2AE81A3E4}.png",
-    "MT6701固件测试/3.项目技术参考文档.md",
     "节点ID分配异常/pictures/{A4F8C490-97C6-4211-BB90-07E0AB7FD849}.png",
     "节点ID分配异常/pictures/{84EE7D55-49B3-4B41-AF5C-CC1B061BCBA5}.png",
     "节点ID分配异常/pictures/{E565757C-B8E1-4023-8301-79D940A90479}.png",
