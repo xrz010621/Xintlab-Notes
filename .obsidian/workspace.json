@@ -36,20 +36,6 @@
             }
           },
           {
-            "id": "a0ac8dc671ba9301",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "节点ID分配异常/单从机id分配异常测试过程和结果记录.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "单从机id分配异常测试过程和结果记录"
-            }
-          },
-          {
             "id": "d77a152a60ca212c",
             "type": "leaf",
             "state": {
@@ -106,7 +92,7 @@
             }
           }
         ],
-        "currentTab": 6
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -179,7 +165,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "带灯双按钮控制器/回球路线测试.md",
+                "file": "PuttReal 电机控制器固件 — 技术规格书.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -189,7 +175,7 @@
                 "unlinkedCollapsed": false
               },
               "icon": "links-coming-in",
-              "title": "回球路线测试 的反向链接列表"
+              "title": "PuttReal 电机控制器固件 — 技术规格书 的反向链接列表"
             }
           },
           {
@@ -279,11 +265,13 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "9ad0c35036276ca9",
+  "active": "d77a152a60ca212c",
   "lastOpenFiles": [
+    "节点ID分配异常/单从机id分配异常测试过程和结果记录.md",
+    "PuttReal 电机控制器固件 — 技术规格书.md",
+    "带灯双按钮控制器/回球路线测试.md",
     "带灯双按钮控制器/P1-EMBD Introduction.md",
     "带灯双按钮控制器/按键 LED 灯效交互规范.md",
-    "带灯双按钮控制器/回球路线测试.md",
     "带灯双按钮控制器/img_v3_02138_0a616958-5efd-45ce-8264-1c737a3111bg.png",
     "img_v3_02138_0a616958-5efd-45ce-8264-1c737a3111bg.png",
     "堵转保护/方案1.md",
@@ -293,13 +281,11 @@
     "按键.md",
     "按键LED灯效交互规范.md",
     "堵转保护/分析note.md",
-    "PuttReal 电机控制器固件 — 技术规格书.md",
     "节点ID分配异常/Agent生成方案/SubPlan1Repo_Code_Modification.md",
     "节点ID分配异常/Agent生成方案/Test_Plan.md",
     "节点ID分配异常/Agent生成方案/SubPlan1_Slave_Diag.md",
     "堵转保护/Issue42.md",
     "bringup固件.md",
-    "节点ID分配异常/单从机id分配异常测试过程和结果记录.md",
     "节点ID分配异常/Issue32.md",
     "节点ID分配异常/技术文档 - 多 APM32 节点 ID 分配机制分析.md",
     "带灯双按钮控制器",

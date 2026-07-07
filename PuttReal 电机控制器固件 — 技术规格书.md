@@ -713,9 +713,8 @@ JSON
 
 失败 / 超时：
 
-JSON
 
-```
+```JSON
 {"motor":"DC", "id":2, "status":"calibration_failed", "msg":"Calibration failed"}
 {"motor":"DC", "status":"calibration_timeout", "msg":"Calibration timed out"}
 ```
@@ -726,9 +725,8 @@ JSON
 
 在进行 `OTA`/`OTABL` 传输时，主机 UART 承载的是 XMODEM 二进制数据流，因此 `progress` 帧**仅**通过 BLE 发送；`start` / `done` / `error` 会发送给两个通道：
 
-JSON
 
-```
+```JSON
 {"motor":"DC", "ota":"start", "id":2, "size":21760}
 {"ota":"progress", "sent":8192}
 {"motor":"DC", "ota":"done", "id":2}
@@ -737,9 +735,8 @@ JSON
 
 ### 18.6 错误与警告
 
-JSON
 
-```
+```JSON
 {"motor":"DC", "status":"error", "msg":"Timestamp expired"}                                  // 时间戳过期
 {"motor":"DC", "status":"error", "msg":"Height out of range"}                                // 高度指令超出 0–254 范围
 {"motor":"DC", "status":"error", "msg":"Adjacent height limit exceeded! Max height diff is 20.0"}
