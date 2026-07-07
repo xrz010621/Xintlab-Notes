@@ -27,12 +27,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "PuttReal 电机控制器固件 — 技术规格书.md",
+                "file": "MT6701固件测试/2.首次工作调试问题报告.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "PuttReal 电机控制器固件 — 技术规格书"
+              "title": "2.首次工作调试问题报告"
             }
           },
           {
@@ -165,7 +165,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "PuttReal 电机控制器固件 — 技术规格书.md",
+                "file": "MT6701固件测试/2.首次工作调试问题报告.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -175,7 +175,7 @@
                 "unlinkedCollapsed": false
               },
               "icon": "links-coming-in",
-              "title": "PuttReal 电机控制器固件 — 技术规格书 的反向链接列表"
+              "title": "2.首次工作调试问题报告 的反向链接列表"
             }
           },
           {
@@ -267,6 +267,7 @@
   },
   "active": "d77a152a60ca212c",
   "lastOpenFiles": [
+    "PuttReal 电机控制器固件 — 技术规格书.md",
     "堵转保护/修改方案文档.md",
     "堵转保护/代码分析note.md",
     "堵转保护/Issue42.md",
@@ -274,7 +275,6 @@
     "带灯双按钮控制器/回球路线测试.md",
     "节点ID分配异常/Agent生成方案/SubPlan1Repo_Code_Modification.md",
     "节点ID分配异常/Issue32.md",
-    "PuttReal 电机控制器固件 — 技术规格书.md",
     "节点ID分配异常/单从机id分配异常测试过程和结果记录.md",
     "带灯双按钮控制器/按键 LED 灯效交互规范.md",
     "带灯双按钮控制器/img_v3_02138_0a616958-5efd-45ce-8264-1c737a3111bg.png",
