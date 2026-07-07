@@ -22,31 +22,17 @@
             }
           },
           {
-            "id": "d77a152a60ca212c",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "堵转保护/修改方案文档.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "修改方案文档"
-            }
-          },
-          {
             "id": "93daa96faf3c369e",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "堵转保护/修改方案文档.md",
+                "file": "堵转保护/快速角度堵转检测代码修改.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "修改方案文档"
+              "title": "快速角度堵转检测代码修改"
             }
           },
           {
@@ -165,7 +151,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "堵转保护/修改方案文档.md",
+                "file": "堵转保护/快速角度堵转检测代码修改.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -175,7 +161,7 @@
                 "unlinkedCollapsed": false
               },
               "icon": "links-coming-in",
-              "title": "修改方案文档 的反向链接列表"
+              "title": "快速角度堵转检测代码修改 的反向链接列表"
             }
           },
           {
@@ -265,15 +251,21 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "d77a152a60ca212c",
+  "active": "93daa96faf3c369e",
   "lastOpenFiles": [
+    "堵转保护/修改方案文档.md",
+    "堵转保护/快速角度堵转检测代码修改.md",
+    "app/Include/app_config.h.md",
+    "app/Include",
+    "app",
+    "带灯双按钮控制器/按键 LED 灯效交互规范.md",
+    "节点ID分配异常/Agent生成方案/SubPlan2_Diag_Enhance.md",
     "软件与算法开发协作工作指南.md",
     "软件与算法开发协作工作指南.md.larkcache",
     "堵转保护/代码分析note.md",
     "节点ID分配异常/双从机测试过程记录.md",
     "节点ID分配异常/单从机id分配异常测试过程和结果记录.md",
     "WeekReport/week1.md",
-    "堵转保护/修改方案文档.md",
     "MT6701固件测试/2.首次工作调试问题报告.md",
     "PuttReal 电机控制器固件 — 技术规格书.md",
     "堵转保护/Issue42.md",
@@ -281,7 +273,6 @@
     "带灯双按钮控制器/回球路线测试.md",
     "节点ID分配异常/Agent生成方案/SubPlan1Repo_Code_Modification.md",
     "节点ID分配异常/Issue32.md",
-    "带灯双按钮控制器/按键 LED 灯效交互规范.md",
     "带灯双按钮控制器/img_v3_02138_0a616958-5efd-45ce-8264-1c737a3111bg.png",
     "img_v3_02138_0a616958-5efd-45ce-8264-1c737a3111bg.png",
     "[[按键.md",
@@ -295,16 +286,11 @@
     "节点ID分配异常/技术文档 - 多 APM32 节点 ID 分配机制分析.md",
     "带灯双按钮控制器",
     "堵转保护",
-    "MT6701固件测试/1.精度测试方案文档.md",
-    "节点ID分配异常/单从机测试异常分析报告.md",
-    "工作小问题记录.md",
     "节点ID分配异常/Agent生成方案",
     "节点ID分配异常/Agent生成",
     "WeekReport",
     "周报",
     "新建文件夹",
-    "Project/puttreal-firmware-apm32/motor_control_apm32/app/Project/Objects/calib_storage.__i",
-    "Project/puttreal-firmware-apm32/motor_control_apm32/app/Project/Objects/can_service.__i",
     "Pasted image 20260629153133.png",
     "节点ID分配异常/pictures/{C96601B5-9CDF-4819-A5E9-5CB2AE81A3E4}.png",
     "节点ID分配异常/pictures/{A4F8C490-97C6-4211-BB90-07E0AB7FD849}.png",
