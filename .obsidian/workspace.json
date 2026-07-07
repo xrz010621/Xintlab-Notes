@@ -22,6 +22,20 @@
             }
           },
           {
+            "id": "375d0448448ed274",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "节点ID分配异常/Agent生成方案/SubPlan1Repo_Code_Modification.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "SubPlan1Repo_Code_Modification"
+            }
+          },
+          {
             "id": "a0ac8dc671ba9301",
             "type": "leaf",
             "state": {
@@ -64,49 +78,35 @@
             }
           },
           {
-            "id": "830f28b811fb1e51",
+            "id": "b56304546fcba295",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "堵转保护/分析note.md",
+                "file": "带灯双按钮控制器/P1-EMBD Introduction.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "分析note"
+              "title": "P1-EMBD Introduction"
             }
           },
           {
-            "id": "dcb57e1a699c97b0",
+            "id": "9ad0c35036276ca9",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "堵转保护/Issue42.md",
+                "file": "带灯双按钮控制器/回球路线测试.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Issue42"
-            }
-          },
-          {
-            "id": "98e525ca4ac0817b",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "PuttReal 电机控制器固件 — 技术规格书.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "PuttReal 电机控制器固件 — 技术规格书"
+              "title": "回球路线测试"
             }
           }
         ],
-        "currentTab": 5
+        "currentTab": 6
       }
     ],
     "direction": "vertical"
@@ -163,7 +163,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 200
+    "width": 228.5
   },
   "right": {
     "id": "ef9c87248229adc5",
@@ -179,17 +179,17 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "堵转保护/Issue42.md",
+                "file": "带灯双按钮控制器/回球路线测试.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
                 "showSearch": false,
                 "searchQuery": "",
                 "backlinkCollapsed": false,
-                "unlinkedCollapsed": true
+                "unlinkedCollapsed": false
               },
               "icon": "links-coming-in",
-              "title": "Issue42 的反向链接列表"
+              "title": "回球路线测试 的反向链接列表"
             }
           },
           {
@@ -279,17 +279,29 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "dcb57e1a699c97b0",
+  "active": "9ad0c35036276ca9",
   "lastOpenFiles": [
+    "带灯双按钮控制器/P1-EMBD Introduction.md",
+    "带灯双按钮控制器/按键 LED 灯效交互规范.md",
+    "带灯双按钮控制器/回球路线测试.md",
+    "带灯双按钮控制器/img_v3_02138_0a616958-5efd-45ce-8264-1c737a3111bg.png",
+    "img_v3_02138_0a616958-5efd-45ce-8264-1c737a3111bg.png",
     "堵转保护/方案1.md",
-    "堵转保护/Issue42.md",
+    "[[按键.md",
+    "[[[按键.md",
+    "[按键.md",
+    "按键.md",
+    "按键LED灯效交互规范.md",
     "堵转保护/分析note.md",
     "PuttReal 电机控制器固件 — 技术规格书.md",
+    "节点ID分配异常/Agent生成方案/SubPlan1Repo_Code_Modification.md",
+    "节点ID分配异常/Agent生成方案/Test_Plan.md",
+    "节点ID分配异常/Agent生成方案/SubPlan1_Slave_Diag.md",
+    "堵转保护/Issue42.md",
     "bringup固件.md",
     "节点ID分配异常/单从机id分配异常测试过程和结果记录.md",
     "节点ID分配异常/Issue32.md",
     "节点ID分配异常/技术文档 - 多 APM32 节点 ID 分配机制分析.md",
-    "带灯双按钮控制器/Introduction.md",
     "带灯双按钮控制器",
     "MT6701固件测试/2.首次工作调试问题报告.md",
     "堵转保护",
@@ -297,26 +309,16 @@
     "节点ID分配异常/双从机测试过程记录.md",
     "节点ID分配异常/单从机测试异常分析报告.md",
     "工作小问题记录.md",
-    "节点ID分配异常/Agent生成方案/SubPlan1_Slave_Diag.md",
-    "节点ID分配异常/Agent生成方案/SubPlan1Repo_Code_Modification.md",
     "节点ID分配异常/Agent生成方案/SubPlan2_Diag_Enhance.md",
-    "节点ID分配异常/Agent生成方案/Test_Plan.md",
     "节点ID分配异常/Agent生成方案",
     "节点ID分配异常/Agent生成",
     "节点ID分配异常/SubPlan2_Diag_Enhance.md",
-    "WeekReport/week1.md",
-    "节点ID分配异常/SubPlan1Repo_Code_Modification.md",
-    "节点ID分配异常/SubPlan1_Slave_Diag.md",
-    "节点ID分配异常/Test_Plan.md",
-    "节点ID分配异常/ENUM_DIAG_BUF_Solution.md",
-    "week1.md",
     "WeekReport",
     "周报",
     "新建文件夹",
     "Project/puttreal-firmware-apm32/motor_control_apm32/app/Project/Objects/calib_storage.__i",
     "Project/puttreal-firmware-apm32/motor_control_apm32/app/Project/Objects/can_service.__i",
     "Project/puttreal-firmware-apm32/motor_control_apm32/app/Project/Objects/board_driver.__i",
-    "节点ID分配异常/Code_Modification1.md",
     "Pasted image 20260629153133.png",
     "节点ID分配异常/pictures/{C96601B5-9CDF-4819-A5E9-5CB2AE81A3E4}.png",
     "节点ID分配异常/pictures/{A4F8C490-97C6-4211-BB90-07E0AB7FD849}.png",
@@ -324,7 +326,6 @@
     "节点ID分配异常/pictures/{E565757C-B8E1-4023-8301-79D940A90479}.png",
     "{84EE7D55-49B3-4B41-AF5C-CC1B061BCBA5}.png",
     "{A4F8C490-97C6-4211-BB90-07E0AB7FD849}.png",
-    "{C96601B5-9CDF-4819-A5E9-5CB2AE81A3E4}.png",
-    "节点ID分配异常/{E565757C-B8E1-4023-8301-79D940A90479}.png"
+    "{C96601B5-9CDF-4819-A5E9-5CB2AE81A3E4}.png"
   ]
 }
