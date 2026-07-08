@@ -635,16 +635,16 @@ main.c    启动初始化、任务、10 ms 主循环
 
 上位机通过 UART/BLE 发送文本行，由 `gateway_process_line()` 进行分发 (`gateway.c:1003`)：
 
-|**命令**|**格式**|**效果 / CAN 映射**|
-|---|---|---|
-|运动|`timestamp,h1,h2,h3,h4,h5,h6[,limit]` (CSV 高度 0–254)|验证高度范围和相邻高度差，按顺序入队，逐一发送运动帧 (`data[0]=0x05`)|
-|急停|`{"action":"estop"}`|清空队列 + 广播 ESTOP (`0x03`)|
-|查询|`{"action":"query"}`|报告网关状态并触发从机查询|
-|校准|`CALIB` / `{"action":"calibration"}`|静默枚举，然后广播 `CONFIG+0xA5`，收集限位/结果事件|
-|配置|`CFG,max_diff,delay,min_pwm,timeout,report[,motor_start_delay]`|存储在 NVS 中，向从机广播配置帧|
-|单次调试|`ONESHOT,<id>,<height>`|**调试专用**：直接向单个节点发送单个 CONTROL 位置帧 (无队列，无重试)，回复 `oneshot_sent`；越界 `id`/`height` 会报错|
-|OTA (app)|`OTA,node,size,crc32hex` + XMODEM-1K|将从机重启至引导程序，桥接二进制文件烧录 app 区域|
-|OTA (bootloader)|`OTABL,node,size,crc32hex` + XMODEM-1K|运行中的 app 自我烧录 boot 区域 (有变砖风险)|
+| **命令**           | **格式**                                                          | **效果 / CAN 映射**                                                                   |
+| ---------------- | --------------------------------------------------------------- | --------------------------------------------------------------------------------- |
+| 运动               | `timestamp,h1,h2,h3,h4,h5,h6[,limit]` (CSV 高度 0–254)            | 验证高度范围和相邻高度差，按顺序入队，逐一发送运动帧 (`data[0]=0x05`)                                       |
+| 急停               | `{"action":"estop"}`                                            | 清空队列 + 广播 ESTOP (`0x03`)                                                          |
+| 查询               | `{"action":"query"}`                                            | 报告网关状态并触发从机查询                                                                     |
+| 校准               | `CALIB` / `{"action":"calibration"}`                            | 静默枚举，然后广播 `CONFIG+0xA5`，收集限位/结果事件                                                 |
+| 配置               | `CFG,max_diff,delay,min_pwm,timeout,report[,motor_start_delay]` | 存储在 NVS 中，向从机广播配置帧                                                                |
+| 单次调试             | `ONESHOT,<id>,<height>`                                         | **调试专用**：直接向单个节点发送单个 CONTROL 位置帧 (无队列，无重试)，回复 `oneshot_sent`；越界 `id`/`height` 会报错 |
+| OTA (app)        | `OTA,node,size,crc32hex` + XMODEM-1K                            | 将从机重启至引导程序，桥接二进制文件烧录 app 区域                                                       |
+| OTA (bootloader) | `OTABL,node,size,crc32hex` + XMODEM-1K                          | 运行中的 app 自我烧录 boot 区域 (有变砖风险)                                                     |
 
 **电机队列** (`gateway.c` `start_next_motor()`)：顺序执行，每个电机之间等待 `motor_start_delay` (默认 800 ms)；发生堵转/超时跳过该电机并发出 `queue_skip`/`queue_timeout` 事件。
 
