@@ -1,3 +1,8 @@
+## bringup固件
+需求：
+首屏启动信息正常
+DRV8876 状态打印正常
+CAN 初始化状态正常
 
 ```c
 //插入位置：main.c main()中各种初始化后，TEST_BUILD前

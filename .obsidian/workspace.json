@@ -27,12 +27,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "PuttReal 电机控制器固件 — 技术规格书.md",
+                "file": "Code-bringup固件.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "PuttReal 电机控制器固件 — 技术规格书"
+              "title": "Code-bringup固件"
             }
           },
           {
@@ -254,6 +254,7 @@
   },
   "active": "93daa96faf3c369e",
   "lastOpenFiles": [
+    "PuttReal 电机控制器固件 — 技术规格书.md",
     "堵转保护/快速角度堵转检测代码修改.md",
     "堵转保护/修改方案文档.md",
     "app/Include/app_config.h.md",
@@ -268,7 +269,6 @@
     "节点ID分配异常/单从机id分配异常测试过程和结果记录.md",
     "WeekReport/week1.md",
     "MT6701固件测试/2.首次工作调试问题报告.md",
-    "PuttReal 电机控制器固件 — 技术规格书.md",
     "堵转保护/Issue42.md",
     "带灯双按钮控制器/P1-EMBD Introduction.md",
     "带灯双按钮控制器/回球路线测试.md",
@@ -283,7 +283,7 @@
     "按键LED灯效交互规范.md",
     "节点ID分配异常/Agent生成方案/Test_Plan.md",
     "节点ID分配异常/Agent生成方案/SubPlan1_Slave_Diag.md",
-    "bringup固件.md",
+    "Code-bringup固件.md",
     "节点ID分配异常/技术文档 - 多 APM32 节点 ID 分配机制分析.md",
     "带灯双按钮控制器",
     "堵转保护",
