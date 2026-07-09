@@ -1,5 +1,7 @@
 ## 针对角度堵转判定窗口过大的修改方案
 >相关issue：[堵转保护中霍尔传感器固件可能缺失+多次堵转后阻尼器失效·Issue #42·xintlabs/puttreal-firmware-apm32](https://github.com/xintlabs/puttreal-firmware-apm32/issues/42#issue-4742349703)
+>类型：分析文档
+>日期：2026-7-3至2026-7-7
 
 #### 问题背景
 摇臂多次堵转（约 10–20 次）使阻尼器（滑动离合）退化后，电机长时间空转。
@@ -124,4 +126,4 @@ motor_ctrl_update() 每 10ms:
 
 
 #### 具体代码修改
-见[[Self - Code - 快速角度堵转检测代码修改]]。
+见[[Self-Code - 快速角度堵转检测代码修改]]。

@@ -1,5 +1,6 @@
 >关联Issue：[[Issue42]] - [堵转保护中霍尔传感器固件可能缺失+多次堵转后阻尼器失效·Issue #42·xintlabs/puttreal-firmware-apm32](https://github.com/xintlabs/puttreal-firmware-apm32/issues/42#issue-4742349703)
 >类型：**代码编写** - 功能修改和增加
+>日期：2026-7-8
 #### 1 [app_config.h]
 L85后新增：
 
