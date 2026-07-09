@@ -78,7 +78,7 @@
             }
           }
         ],
-        "currentTab": 2
+        "currentTab": 4
       }
     ],
     "direction": "vertical"
@@ -252,10 +252,10 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "b56304546fcba295",
+  "active": "1355a6f6f4be915a",
   "lastOpenFiles": [
-    "带灯双按钮控制器/按键 LED 灯效交互规范.md",
     "带灯双按钮控制器/P1-EMBD Introduction.md",
+    "带灯双按钮控制器/按键 LED 灯效交互规范.md",
     "带灯双按钮控制器/回球路线测试.md",
     "Self-Test - 电机模块联调情况记录.md",
     "堵转保护/Issue42.md",
