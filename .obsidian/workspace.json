@@ -85,7 +85,7 @@
               "state": {
                 "file": "带灯双按钮控制器/双按键控制器.md",
                 "mode": "source",
-                "source": true
+                "source": false
               },
               "icon": "lucide-file",
               "title": "双按键控制器"
