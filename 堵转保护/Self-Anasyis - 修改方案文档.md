@@ -126,4 +126,30 @@ motor_ctrl_update() 每 10ms:
 
 
 #### 具体代码修改
-见[[Self-Code - 快速角度堵转检测代码修改]]。
+详见[[Self-Code - 快速角度堵转检测代码修改]]。
+
+Add fast angle-freeze stall detection based on encoder movement. Trigger MOTOR_FAULT_STALL when encoder progress remains below threshold (~0.1 deg) within a 500 ms window.
+
+The detection is independent of motor current and applies to POSITION, TIMED, and SPEED modes. Startup phase is excluded to avoid false triggering.
+
+Code Changes：
+
+- `app_config.h`
+    
+    - Added fast stall detection thresholds:
+    
+        - `FAST_STALL_PROGRESS_DEG` for minimum angle movement detection.
+        - `FAST_STALL_CYCLES` for stall confirmation timing.
+        
+- `motor_controller.h`
+    
+    - Added intermediate variables required by fast stall detection.  
+    
+- `motor_controller.c`
+    
+    - Added reset handling for fast stall intermediate states.
+    - Implemented fast angle-freeze stall detection based on encoder movement.
+    - Moved `angle_change` and `pos_err` calculations ahead in the control flow.
+    - Reordered `SUB_MODE_SPEED` exit handling to ensure fast stall detection is applied in SPEED mode.
+
+#### 结果
