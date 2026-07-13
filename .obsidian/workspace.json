@@ -92,7 +92,7 @@
             }
           }
         ],
-        "currentTab": 5
+        "currentTab": 4
       }
     ],
     "direction": "vertical"
@@ -266,8 +266,9 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "cb29e18f4bc4c06c",
+  "active": "1355a6f6f4be915a",
   "lastOpenFiles": [
+    "堵转保护/Self-Anasyis - 修改方案文档.md",
     "堵转保护/Self-Code - 快速角度堵转检测代码修改.md",
     "带灯双按钮控制器/双按键控制器.md",
     "带灯双按钮控制器/按键 LED 灯效交互规范.md",
@@ -286,7 +287,6 @@
     "Self-Note - 工作小问题记录.md",
     "节点ID分配异常/Self-Test - 双从机测试过程记录.md",
     "节点ID分配异常/Issue32.md",
-    "堵转保护/Self-Anasyis - 修改方案文档.md",
     "堵转保护/代码分析note.md",
     "节点ID分配异常/Agent生成方案/SubPlan2_Diag_Enhance.md",
     "节点ID分配异常/Agent生成方案/Test_Plan.md",
