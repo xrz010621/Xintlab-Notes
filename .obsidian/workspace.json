@@ -92,7 +92,7 @@
             }
           }
         ],
-        "currentTab": 3
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -266,16 +266,16 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "9ad0c35036276ca9",
+  "active": "b56304546fcba295",
   "lastOpenFiles": [
     "带灯双按钮控制器/按键 LED 灯效交互规范.md",
+    "带灯双按钮控制器/回球路线测试.md",
     "带灯双按钮控制器/双按键控制器.md",
     "Xintlab官方文档/PuttReal 电机控制器固件 — 技术规格书.md",
     "带灯双按钮控制器/P1-EMBD Introduction.md",
     "堵转保护/Self-Anasyis - 修改方案文档.md",
     "堵转保护/Self-Code - 快速角度堵转检测代码修改.md",
     "带灯双按钮控制器/未命名",
-    "带灯双按钮控制器/回球路线测试.md",
     "Self-Test - 电机模块联调情况记录.md",
     "堵转保护/Issue42.md",
     "节点ID分配异常/技术文档 - 多 APM32 节点 ID 分配机制分析.md",
