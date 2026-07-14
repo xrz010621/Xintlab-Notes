@@ -575,16 +575,16 @@ main.c    启动初始化、任务、10 ms 主循环
 
 **hal/ (硬件抽象 + ESP32 实现):**
 
-|**文件**|**职责**|
-|---|---|
-|`hal_ble_esp32.c`|NimBLE GATT 服务 (NUS UUID)，MTU 512，单连接|
-|`hal_can_esp32.c`|TWAI 驱动 (50 kbps)，bus-off 恢复，收发计数器|
-|`hal_uart_esp32.c`|UART0 115200，4 KB RX 环形缓冲 (可容纳 4× XMODEM-1K 数据包用于 OTA 重传)|
-|`hal_led_esp32.c`|板载 WS2816C (SPI2 后端，避免占用灯带的 RMT 通道)，GRB|
-|`hal_strip_esp32.c`|2× WS2812 (RMT @ 10 MHz, 48 mem_block_symbols)|
-|`hal_button_esp32.c`|GPIO 输入轮询 (低有效，软件防抖)|
-|`hal_storage_esp32.c`|NVS 键值存储|
-|`hal_system_esp32.c`|延时，正常运行时间，系统滴答|
+| **文件**                | **职责**                                                    |
+| --------------------- | --------------------------------------------------------- |
+| `hal_ble_esp32.c`     | NimBLE GATT 服务 (NUS UUID)，MTU 512，单连接                     |
+| `hal_can_esp32.c`     | TWAI 驱动 (50 kbps)，bus-off 恢复，收发计数器                        |
+| `hal_uart_esp32.c`    | UART0 115200，4 KB RX 环形缓冲 (可容纳 4× XMODEM-1K 数据包用于 OTA 重传) |
+| `hal_led_esp32.c`     | 板载 WS2816C (SPI2 后端，避免占用灯带的 RMT 通道)，GRB                   |
+| `hal_strip_esp32.c`   | 2× WS2812 (RMT @ 10 MHz, 48 mem_block_symbols)            |
+| `hal_button_esp32.c`  | GPIO 输入轮询 (低有效，软件防抖)                                      |
+| `hal_storage_esp32.c` | NVS 键值存储                                                  |
+| `hal_system_esp32.c`  | 延时，正常运行时间，系统滴答                                            |
 
 `main.c` 任务：`uart_rx_task` (按行累加上位机命令 → `gateway_process_line()`)，`ble_rx_callback` (BLE 写入累加至换行)，`diagnostics_task` (每 1 s 打印 SYS/BLE/CAN 状态，在 OTA 期间静默)，以及主循环 (10 ms: CAN 健康检查 → 排空 RX → 推进电机队列 → 指示灯/按钮/灯光秀更新 → 周期报告)。
 
@@ -701,9 +701,7 @@ main.c    启动初始化、任务、10 ms 主循环
 
 响应 `CALIB` / `{"action":"calibrate"}` 时发出的序列（网关首先执行急停并清空队列，然后广播 `CONFIG+0xA5`）：
 
-JSON
-
-```
+```JSON
 {"motor":"DC", "status":"calibration_started", "msg":"Calibration started for all nodes"}
 {"motor":"DC", "id":2, "status":"calibration_limit", "direction":"forward", "raw_angle":75.00, "raw_count":13011}
 {"motor":"DC", "id":2, "status":"calibration_limit", "direction":"reverse", "raw_angle":0.50, "raw_count":9335}
