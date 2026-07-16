@@ -105,8 +105,7 @@
               "title": "ESP32 V1.1 问题汇总"
             }
           }
-        ],
-        "currentTab": 6
+        ]
       }
     ],
     "direction": "vertical"
@@ -280,10 +279,10 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "5de0cd553f971cb4",
+  "active": "375d0448448ed274",
   "lastOpenFiles": [
-    "带灯双按钮控制器/双按键控制器.md",
     "ESP32 V1.1 问题汇总.md",
+    "带灯双按钮控制器/双按键控制器.md",
     "带灯双按钮控制器/按键 LED 灯效交互规范.md",
     "带灯双按钮控制器/回球路线测试.md",
     "带灯双按钮控制器/P1-EMBD Introduction.md",
