@@ -4,7 +4,7 @@
 Build:Feb  7 2021
 rst:0x1 (POWERON),boot:0x5 (DOWNLOAD(USB/UART0/1))
 waiting for download
-
 ```
+	进入了烧录模式
 - 上电后随机出现灯带若干LED灯闪烁，数量不等，颜色大部分是白色和绿色
 - 每次上电时STATUS灯的亮度
