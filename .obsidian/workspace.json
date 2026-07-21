@@ -97,12 +97,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "ESP32 V1.1 问题汇总.md",
+                "file": "git操作/Git.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "ESP32 V1.1 问题汇总"
+              "title": "Git"
             }
           }
         ],
@@ -280,11 +280,12 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "1af92d6d7ab05c04",
+  "active": "5de0cd553f971cb4",
   "lastOpenFiles": [
-    "未命名",
-    "Xintlab官方文档/PuttReal 电机控制器固件 — 技术规格书.md",
     "ESP32 V1.1 问题汇总.md",
+    "git操作/Git.md",
+    "git操作",
+    "Xintlab官方文档/PuttReal 电机控制器固件 — 技术规格书.md",
     "带灯双按钮控制器/双按键控制器.md",
     "带灯双按钮控制器/按键 LED 灯效交互规范.md",
     "带灯双按钮控制器/回球路线测试.md",
@@ -319,7 +320,6 @@
     "堵转保护",
     "节点ID分配异常/Agent生成方案",
     "节点ID分配异常/Agent生成",
-    "WeekReport",
     "Pasted image 20260629153133.png",
     "节点ID分配异常/pictures/{C96601B5-9CDF-4819-A5E9-5CB2AE81A3E4}.png",
     "节点ID分配异常/pictures/{A4F8C490-97C6-4211-BB90-07E0AB7FD849}.png",
