@@ -280,8 +280,9 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "5de0cd553f971cb4",
+  "active": "1af92d6d7ab05c04",
   "lastOpenFiles": [
+    "未命名",
     "Xintlab官方文档/PuttReal 电机控制器固件 — 技术规格书.md",
     "ESP32 V1.1 问题汇总.md",
     "带灯双按钮控制器/双按键控制器.md",
@@ -308,7 +309,6 @@
     "MT6701固件测试/项目技术参考文档.md",
     "MT6701固件测试/精度测试方案文档.md",
     "WeekReport/week1.md",
-    "Xintlab官方文档/软件与算法开发协作工作指南.md",
     "Xintlab官方文档",
     "app/Include",
     "app",
