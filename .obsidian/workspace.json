@@ -78,7 +78,7 @@
             }
           }
         ],
-        "currentTab": 1
+        "currentTab": 4
       }
     ],
     "direction": "vertical"
@@ -252,8 +252,9 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "a8446eeb084d06d5",
+  "active": "1355a6f6f4be915a",
   "lastOpenFiles": [
+    "git操作/Git.md",
     "带灯双按钮控制器/mode_fsm_code_report.md",
     "带灯双按钮控制器/Self-Code - 带灯双按钮控制器报告.md",
     "带灯双按钮控制器/双按键控制器.md",
@@ -270,7 +271,6 @@
     "Self-Note - 工作小问题记录.md",
     "WeekReport/week1.md",
     "MT6701固件测试/项目技术参考文档.md",
-    "git操作/Git.md",
     "git操作",
     "带灯双按钮控制器/未命名",
     "节点ID分配异常/技术文档 - 多 APM32 节点 ID 分配机制分析.md",
