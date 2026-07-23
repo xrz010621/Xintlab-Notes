@@ -268,6 +268,7 @@
   },
   "active": "92a22586065aafb7",
   "lastOpenFiles": [
+    "Self-Code - APM32 bringup固件.md",
     "Pasted image 20260723101812.png",
     "标定测试数据.md",
     "ESP32 V1.1 问题汇总.md",
@@ -283,7 +284,6 @@
     "堵转保护/Self-Anasyis - 修改方案文档.md",
     "带灯双按钮控制器/P1-EMBD Introduction.md",
     "Xintlab官方文档/PuttReal 电机控制器固件 — 技术规格书.md",
-    "Self-Code - bringup固件.md",
     "Self-Note - 工作小问题记录.md",
     "WeekReport/week1.md",
     "MT6701固件测试/项目技术参考文档.md",
@@ -312,7 +312,6 @@
     "节点ID分配异常/pictures/{84EE7D55-49B3-4B41-AF5C-CC1B061BCBA5}.png",
     "节点ID分配异常/pictures/{E565757C-B8E1-4023-8301-79D940A90479}.png",
     "{84EE7D55-49B3-4B41-AF5C-CC1B061BCBA5}.png",
-    "{A4F8C490-97C6-4211-BB90-07E0AB7FD849}.png",
-    "{C96601B5-9CDF-4819-A5E9-5CB2AE81A3E4}.png"
+    "{A4F8C490-97C6-4211-BB90-07E0AB7FD849}.png"
   ]
 }
