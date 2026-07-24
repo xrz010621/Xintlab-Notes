@@ -83,16 +83,16 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "带灯双按钮控制器/Self-Code - 带灯双按钮控制器报告.md",
+                "file": "带灯双按钮控制器/mode_fsm_code_report.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Self-Code - 带灯双按钮控制器报告"
+              "title": "mode_fsm_code_report"
             }
           }
         ],
-        "currentTab": 5
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -266,8 +266,11 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "92a22586065aafb7",
+  "active": "5de0cd553f971cb4",
   "lastOpenFiles": [
+    "带灯双按钮控制器/双按键控制器.md",
+    "带灯双按钮控制器/Self-Code - 带灯双按钮控制器报告.md",
+    "带灯双按钮控制器/mode_fsm_code_report.md",
     "Self-Test - 电机模块联调情况记录.md",
     "Self-Note - 工作小问题记录.md",
     "git操作/Git.md",
@@ -275,9 +278,6 @@
     "Self-Code - APM32 bringup固件.md",
     "标定测试数据.md",
     "Pasted image 20260723101812.png",
-    "带灯双按钮控制器/mode_fsm_code_report.md",
-    "带灯双按钮控制器/Self-Code - 带灯双按钮控制器报告.md",
-    "带灯双按钮控制器/双按键控制器.md",
     "带灯双按钮控制器/回球路线测试.md",
     "堵转保护/Self-Code - 快速角度堵转检测代码修改.md",
     "堵转保护/Issue42.md",
