@@ -83,12 +83,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "带灯双按钮控制器/mode_fsm_code_report.md",
+                "file": "Self-Test - ESP32 V1.1 问题汇总.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "mode_fsm_code_report"
+              "title": "Self-Test - ESP32 V1.1 问题汇总"
             }
           }
         ],
@@ -268,11 +268,11 @@
   },
   "active": "92a22586065aafb7",
   "lastOpenFiles": [
+    "带灯双按钮控制器/mode_fsm_code_report.md",
     "Self-Test - 电机模块联调情况记录.md",
     "Self-Test - ESP32 V1.1 问题汇总.md",
     "带灯双按钮控制器/Self-Code - 带灯双按钮控制器报告.md",
     "带灯双按钮控制器/双按键控制器.md",
-    "带灯双按钮控制器/mode_fsm_code_report.md",
     "Self-Note - 工作小问题记录.md",
     "git操作/Git.md",
     "Self-Code - APM32 bringup固件.md",
